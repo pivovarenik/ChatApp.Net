@@ -1,0 +1,26 @@
+﻿<Application x:Class="Chat.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Chat"
+             xmlns:views="clr-namespace:Chat.MVVM.View"
+             xmlns:viewmodels="clr-namespace:Chat.MVVM.ViewModel"
+             StartupUri="MVVM/View/AuthWindow.xaml">
+    <Application.Resources>
+        <ResourceDictionary>
+            <ResourceDictionary.MergedDictionaries>
+                <ResourceDictionary Source="./Themes/ContactCard.xaml"/>
+                <ResourceDictionary Source="./Themes/ChatItem.xaml"/>
+                <ResourceDictionary Source="./Themes/MessageBox.xaml"/>
+                <ResourceDictionary Source="./Themes/CustomScrollbar.xaml"/>
+                <ResourceDictionary Source="./Themes/UserNameInputBox.xaml"/>
+            </ResourceDictionary.MergedDictionaries>
+            <DataTemplate DataType="{x:Type viewmodels:MainViewModel}">
+                <views:MainWindow/>
+            </DataTemplate> 
+            <DataTemplate DataType="{x:Type viewmodels:AuthWindowModel}">
+                <views:AuthWindow/>
+            </DataTemplate>
+        </ResourceDictionary>
+
+    </Application.Resources>
+</Application>
